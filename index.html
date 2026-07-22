@@ -3,31 +3,219 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yumvote · Dinner, decided.</title>
-  <meta name="description" content="The household meal planner where everyone gets a vote. Plan together, vote on dinner, and shop from a list that writes itself." />
+  <title>Yumvote — Plan, vote and shop together</title>
+  <meta name="description" content="The family meal planner where everyone gets a vote. Plan the week, vote on dinner, and get a shopping list that writes itself. 480+ recipes included." />
+  <meta property="og:title" content="Yumvote — Dinner is a democracy now" />
+  <meta property="og:description" content="Plan the week, vote on dinner, and shop together. 480+ recipes included." />
+  <meta property="og:image" content="https://yumvote.app/dishes/d1.jpg" />
+  <meta property="og:url" content="https://yumvote.app" />
+  <link rel="icon" href="/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    :root { --crimson: #DC2626; --ink: #0A0A0B; --ink2: #6B6B72; }
+    :root { --crimson: #DC2626; --crimson-deep: #B91C1C; --ink: #1F1A17; --cream: #FBF7F1; --line: #EBEBEE; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: #fff; min-height: 100vh; display: flex; flex-direction: column; }
-    main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 24px; }
-    .logo { height: 110px; width: auto; }
-    h1 { font-size: 26px; margin-top: 18px; letter-spacing: -0.01em; }
-    p { color: var(--ink2); font-size: 17px; margin-top: 10px; max-width: 420px; line-height: 1.6; }
-    .soon { display: inline-block; margin-top: 26px; border: 1.5px solid var(--crimson); color: var(--crimson); border-radius: 999px; padding: 10px 22px; font-weight: 600; font-size: 15px; }
-    footer { text-align: center; padding: 24px; color: var(--ink2); font-size: 13px; }
-    footer a { color: var(--ink2); }
+    body { font-family: Inter, system-ui, sans-serif; color: #fff; background: var(--crimson); line-height: 1.6; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: "Bricolage Grotesque", sans-serif; letter-spacing: -0.02em; }
+
+    /* Hero */
+    .hero-inner { display: flex; align-items: center; gap: 48px; padding: 60px 0 24px; }
+    .hero-copy { flex: 1; }
+    .logo-white { height: 64px; filter: brightness(0) invert(1); margin-bottom: 26px; display: block; }
+    h1 { font-weight: 800; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.05; }
+    .sub { font-size: 19px; margin: 18px 0 30px; color: rgba(255,255,255,.92); max-width: 44ch; }
+    .badges { display: flex; gap: 12px; flex-wrap: wrap; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--ink); color: #fff; text-decoration: none;
+      border-radius: 12px; padding: 11px 20px; font-weight: 600; font-size: 15px;
+      border: 1px solid rgba(255,255,255,.22);
+    }
+    .badge small { display: block; font-weight: 400; font-size: 11px; color: rgba(255,255,255,.65); line-height: 1.2; }
+    .badge .txt { text-align: left; }
+    .badge .icon { font-size: 21px; }
+    .hero-phone { flex: 0 0 330px; }
+    .hero-phone img { width: 330px; display: block; border-radius: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.4); }
+
+    /* Dish strip */
+    .strip { display: flex; gap: 14px; justify-content: center; padding: 26px 24px 56px; flex-wrap: wrap; }
+    .strip img {
+      width: 132px; height: 132px; object-fit: cover; border-radius: 18px;
+      border: 3px solid rgba(255,255,255,.9); box-shadow: 0 10px 26px rgba(0,0,0,.3);
+    }
+    .strip img:nth-child(odd)  { transform: rotate(-3deg); }
+    .strip img:nth-child(even) { transform: rotate(2.5deg); }
+
+    /* Features (white band) */
+    .features { background: #fff; color: var(--ink); border-radius: 28px 28px 0 0; padding: 64px 0; }
+    .features h2, .how h2 { font-weight: 800; font-size: clamp(26px, 3.5vw, 36px); text-align: center; margin-bottom: 38px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+    .card { background: var(--cream); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+    .card .emoji { font-size: 26px; }
+    .card h3 { font-size: 18px; margin: 10px 0 6px; color: var(--ink); }
+    .card p { font-size: 14.5px; color: #6B6B72; }
+
+    /* How it works (crimson) */
+    .how { background: var(--crimson); padding: 64px 0; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; counter-reset: step; }
+    .step { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 16px; padding: 22px; }
+    .step h3 { font-size: 19px; margin-bottom: 6px; }
+    .step h3::before { counter-increment: step; content: counter(step) ". "; }
+    .step p { font-size: 14.5px; color: rgba(255,255,255,.88); }
+
+    /* Pricing (white band) */
+    .pricing { background: #fff; color: var(--ink); padding: 64px 0; }
+    .pricing h2 { font-weight: 800; font-size: clamp(26px, 3.5vw, 36px); text-align: center; margin-bottom: 10px; }
+    .pricing .tagline { text-align: center; color: #6B6B72; margin-bottom: 36px; }
+    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 720px; margin: 0 auto; }
+    .plan { border-radius: 20px; padding: 28px; border: 1px solid var(--line); background: var(--cream); }
+    .plan.pro { background: var(--crimson); color: #fff; border: none; box-shadow: 0 16px 44px rgba(220,38,38,.35); }
+    .plan h3 { font-size: 21px; margin-bottom: 2px; }
+    .plan .price { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34px; margin: 10px 0 2px; }
+    .plan .price small { font-size: 15px; font-weight: 500; }
+    .plan .alt { font-size: 13.5px; color: #6B6B72; margin-bottom: 14px; }
+    .plan.pro .alt { color: rgba(255,255,255,.85); }
+    .plan ul { list-style: none; font-size: 14.5px; }
+    .plan li { padding: 5px 0 5px 24px; position: relative; }
+    .plan li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; color: var(--crimson); }
+    .plan.pro li::before { color: #fff; }
+    .trial-pill { display: inline-block; background: #fff; color: var(--crimson); font-weight: 700; font-size: 12.5px; border-radius: 999px; padding: 4px 12px; margin-bottom: 8px; }
+
+    /* CTA */
+    .cta { text-align: center; padding: 26px 24px 64px; background: var(--crimson); }
+    .cta h2 { font-weight: 800; font-size: clamp(24px, 3vw, 32px); margin-bottom: 8px; }
+    .cta p { color: rgba(255,255,255,.9); margin-bottom: 24px; }
+    .cta .badges { justify-content: center; }
+
+    /* Footer */
+    footer { background: var(--crimson-deep); padding: 30px 24px; text-align: center; font-size: 13.5px; color: rgba(255,255,255,.85); }
+    footer a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+    footer .copy { margin-top: 10px; color: rgba(255,255,255,.6); }
+
+    @media (max-width: 780px) {
+      .hero-inner { flex-direction: column; gap: 30px; padding-top: 44px; text-align: center; }
+      .logo-white { margin-inline: auto; height: 54px; }
+      .sub { margin-inline: auto; font-size: 17px; }
+      .badges { justify-content: center; }
+      .hero-phone { flex-basis: auto; }
+      .hero-phone img { width: 250px; }
+      .strip { gap: 10px; padding-bottom: 44px; }
+      .strip img { width: 94px; height: 94px; border-width: 2px; }
+      .features, .how, .pricing { padding: 46px 0; }
+      .card, .step, .plan { padding: 20px; }
+      .plan .price { font-size: 30px; }
+      .cta { padding-bottom: 48px; }
+      footer nav a { display: inline-block; margin: 4px 8px; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <img class="logo" src="/logo.png" alt="Yumvote" />
-    <h1>Dinner, decided.</h1>
-    <p>The household meal planner where everyone gets a vote. Plan together, vote on what to eat, and shop from a list that writes itself.</p>
-    <span class="soon">Coming soon to the App Store</span>
-  </main>
+
+  <header class="wrap hero-inner">
+    <div class="hero-copy">
+      <img class="logo-white" src="/logo.png" alt="Yumvote" />
+      <h1>Dinner is a<br />democracy now</h1>
+      <p class="sub">The family meal planner where everyone gets a vote. Plan the week together, vote on dinner, and get a shopping list that writes itself — 480+ recipes included.</p>
+      <div class="badges">
+        <a class="badge" id="ios-badge" href="#" onclick="return false;">
+          <span class="icon"></span>
+          <span class="txt"><small>Coming soon to the</small>App Store</span>
+        </a>
+        <a class="badge" id="play-badge" href="#" onclick="return false;">
+          <span class="icon">▶</span>
+          <span class="txt"><small>Coming soon to</small>Google Play</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <img src="/phone-voting.png" alt="Voting on tonight's dinner in Yumvote" />
+    </div>
+  </header>
+
+  <div class="strip" aria-hidden="true">
+    <img src="/dishes/d1.jpg" alt="" loading="lazy" />
+    <img src="/dishes/d2.jpg" alt="" loading="lazy" />
+    <img src="/dishes/d3.jpg" alt="" loading="lazy" />
+    <img src="/dishes/d4.jpg" alt="" loading="lazy" />
+    <img src="/dishes/d5.jpg" alt="" loading="lazy" />
+    <img src="/dishes/d6.jpg" alt="" loading="lazy" />
+  </div>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>Built for the 5pm “what’s for dinner?” panic</h2>
+      <div class="grid">
+        <div class="card"><div class="emoji">🗳️</div><h3>Everyone votes</h3><p>Shortlist dishes and let the household vote Love It or Fine. Highest score wins the plate — nobody sighs at the table.</p></div>
+        <div class="card"><div class="emoji">🛒</div><h3>The list writes itself</h3><p>Winning dishes become one shopping list — merged, de-duplicated, sorted by aisle, and ticked off together in real time.</p></div>
+        <div class="card"><div class="emoji">🍅</div><h3>480+ recipes</h3><p>From 30-minute wonders to date-night dishes, with nutrition estimates, allergen flags and kid-friendly tweaks on every one.</p></div>
+        <div class="card"><div class="emoji">👨‍👩‍👧</div><h3>One sub, whole household</h3><p>One subscription covers everyone — and family members who skip the app still count for portions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step"><h3>Plan</h3><p>Pick the days you want dinner sorted — tonight or the whole week.</p></div>
+        <div class="step"><h3>Vote</h3><p>Chef’s Picks, Open Floor, or Just Call It — your household, your rules.</p></div>
+        <div class="step"><h3>Shop &amp; cook</h3><p>Tick off the aisle-sorted list together, then follow step-by-step cook mode.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="wrap">
+      <h2>Start free. Upgrade when dinner demands it.</h2>
+      <p class="tagline">One subscription covers the whole household — everyone gets Pro, only one person pays.</p>
+      <div class="plans">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price">€0</div>
+          <div class="alt">forever</div>
+          <ul>
+            <li>Plan up to 3 days ahead</li>
+            <li>Voting rounds &amp; shopping lists</li>
+            <li>Big free recipe library</li>
+            <li>Unlimited household members</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <span class="trial-pill">14-day free trial</span>
+          <h3>Yumvote Pro</h3>
+          <div class="price">€4.99 <small>/ month</small></div>
+          <div class="alt">or €39.99 / year — two months free</div>
+          <ul>
+            <li>Unlimited planning, as far ahead as you like</li>
+            <li>Full 480+ recipe catalog</li>
+            <li>New recipes added every month</li>
+            <li>Open Floor rounds — everyone nominates</li>
+            <li>Whole household included</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Launching soon on both stores</h2>
+    <p>Yumvote is in final review with Apple and Google. Want a nudge the moment it’s live?</p>
+    <div class="badges">
+      <a class="badge" href="mailto:support@yumvote.app?subject=Tell%20me%20when%20Yumvote%20launches&body=Let%20me%20know%20when%20Yumvote%20is%20live!">📬 <span class="txt"><small>Get notified</small>support@yumvote.app</span></a>
+    </div>
+  </section>
+
   <footer>
-    <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Use</a> · <a href="mailto:support@yumvote.app">support@yumvote.app</a>
-    <div style="margin-top:6px">© 2026 Blinklabs Ltd</div>
+    <nav>
+      <a href="mailto:support@yumvote.app">Support</a> ·
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/terms.html">Terms of Use</a> ·
+      <a href="/delete-account.html">Delete account</a>
+    </nav>
+    <div class="copy">© 2026 Blinklabs Ltd · Yumvote is made with 🍅 in Malta</div>
   </footer>
+
 </body>
 </html>
