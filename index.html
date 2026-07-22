@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yumvote — Plan, vote and shop together</title>
+  <title>Yumvote · Plan, vote and shop together</title>
   <meta name="description" content="The family meal planner where everyone gets a vote. Plan the week, vote on dinner, and get a shopping list that writes itself. 480+ recipes included." />
-  <meta property="og:title" content="Yumvote — Dinner is a democracy now" />
+  <meta property="og:title" content="Yumvote: Dinner is a democracy now" />
   <meta property="og:description" content="Plan the week, vote on dinner, and shop together. 480+ recipes included." />
   <meta property="og:image" content="https://yumvote.app/dishes/d1.jpg" />
   <meta property="og:url" content="https://yumvote.app" />
@@ -28,17 +28,9 @@
     h1 { font-weight: 800; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.05; }
     .sub { font-size: 19px; margin: 18px 0 30px; color: rgba(255,255,255,.92); max-width: 44ch; }
     .badges { display: flex; gap: 12px; flex-wrap: wrap; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--ink); color: #fff; text-decoration: none;
-      border-radius: 12px; padding: 11px 20px; font-weight: 600; font-size: 15px;
-      border: 1px solid rgba(255,255,255,.22);
-    }
-    .badge small { display: block; font-weight: 400; font-size: 11px; color: rgba(255,255,255,.65); line-height: 1.2; }
-    .badge .txt { text-align: left; }
-    .badge .icon { font-size: 21px; }
-    .hero-phone { flex: 0 0 330px; }
-    .hero-phone img { width: 330px; display: block; border-radius: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.4); }
+    .storebadge { height: 58px; width: auto; border-radius: 13px; display: block; box-shadow: 0 8px 22px rgba(0,0,0,.25); }
+                .hero-phone { flex: 0 0 520px; }
+    .hero-phone img { width: 520px; display: block; }
 
     /* Dish strip */
     .strip { display: flex; gap: 14px; justify-content: center; padding: 26px 24px 56px; flex-wrap: wrap; }
@@ -102,7 +94,7 @@
       .sub { margin-inline: auto; font-size: 17px; }
       .badges { justify-content: center; }
       .hero-phone { flex-basis: auto; }
-      .hero-phone img { width: 250px; }
+      .hero-phone img { width: 340px; }
       .strip { gap: 10px; padding-bottom: 44px; }
       .strip img { width: 94px; height: 94px; border-width: 2px; }
       .features, .how, .pricing { padding: 46px 0; }
@@ -119,20 +111,14 @@
     <div class="hero-copy">
       <img class="logo-white" src="/logo.png" alt="Yumvote" />
       <h1>Dinner is a<br />democracy now</h1>
-      <p class="sub">The family meal planner where everyone gets a vote. Plan the week together, vote on dinner, and get a shopping list that writes itself — 480+ recipes included.</p>
+      <p class="sub">The family meal planner where everyone gets a vote. Plan the week together, vote on dinner, and get a shopping list that writes itself. 480+ recipes included.</p>
       <div class="badges">
-        <a class="badge" id="ios-badge" href="#" onclick="return false;">
-          <span class="icon"></span>
-          <span class="txt"><small>Coming soon to the</small>App Store</span>
-        </a>
-        <a class="badge" id="play-badge" href="#" onclick="return false;">
-          <span class="icon">▶</span>
-          <span class="txt"><small>Coming soon to</small>Google Play</span>
-        </a>
+        <a href="https://apps.apple.com/app/id6783482200"><img class="storebadge" src="/badge-appstore.png" alt="Download on the App Store" /></a>
+        <a href="https://play.google.com/store/apps/details?id=io.yumvote.app"><img class="storebadge" src="/badge-play.png" alt="Get it on Google Play" /></a>
       </div>
     </div>
     <div class="hero-phone">
-      <img src="/phone-voting.png" alt="Voting on tonight's dinner in Yumvote" />
+      <img src="/phone-fan.png" alt="Yumvote's plan, voting and shopping screens" />
     </div>
   </header>
 
@@ -149,10 +135,10 @@
     <div class="wrap">
       <h2>Built for the 5pm “what’s for dinner?” panic</h2>
       <div class="grid">
-        <div class="card"><div class="emoji">🗳️</div><h3>Everyone votes</h3><p>Shortlist dishes and let the household vote Love It or Fine. Highest score wins the plate — nobody sighs at the table.</p></div>
-        <div class="card"><div class="emoji">🛒</div><h3>The list writes itself</h3><p>Winning dishes become one shopping list — merged, de-duplicated, sorted by aisle, and ticked off together in real time.</p></div>
+        <div class="card"><div class="emoji">🗳️</div><h3>Everyone votes</h3><p>Shortlist dishes and let the household vote Love It or Fine. Highest score wins the plate, and nobody sighs at the table.</p></div>
+        <div class="card"><div class="emoji">🛒</div><h3>The list writes itself</h3><p>Winning dishes become one shopping list: merged, de-duplicated, sorted by aisle, and ticked off together in real time.</p></div>
         <div class="card"><div class="emoji">🍅</div><h3>480+ recipes</h3><p>From 30-minute wonders to date-night dishes, with nutrition estimates, allergen flags and kid-friendly tweaks on every one.</p></div>
-        <div class="card"><div class="emoji">👨‍👩‍👧</div><h3>One sub, whole household</h3><p>One subscription covers everyone — and family members who skip the app still count for portions.</p></div>
+        <div class="card"><div class="emoji">👨‍👩‍👧</div><h3>One sub, whole household</h3><p>One subscription covers everyone, and family members who skip the app still count for portions.</p></div>
       </div>
     </div>
   </section>
@@ -161,8 +147,8 @@
     <div class="wrap">
       <h2>How it works</h2>
       <div class="steps">
-        <div class="step"><h3>Plan</h3><p>Pick the days you want dinner sorted — tonight or the whole week.</p></div>
-        <div class="step"><h3>Vote</h3><p>Chef’s Picks, Open Floor, or Just Call It — your household, your rules.</p></div>
+        <div class="step"><h3>Plan</h3><p>Pick the days you want dinner sorted, tonight or the whole week.</p></div>
+        <div class="step"><h3>Vote</h3><p>Chef’s Picks, Open Floor, or Just Call It. Your household, your rules.</p></div>
         <div class="step"><h3>Shop &amp; cook</h3><p>Tick off the aisle-sorted list together, then follow step-by-step cook mode.</p></div>
       </div>
     </div>
@@ -171,7 +157,7 @@
   <section class="pricing">
     <div class="wrap">
       <h2>Start free. Upgrade when dinner demands it.</h2>
-      <p class="tagline">One subscription covers the whole household — everyone gets Pro, only one person pays.</p>
+      <p class="tagline">One subscription covers the whole household. Everyone gets Pro, only one person pays.</p>
       <div class="plans">
         <div class="plan">
           <h3>Free</h3>
@@ -188,12 +174,12 @@
           <span class="trial-pill">14-day free trial</span>
           <h3>Yumvote Pro</h3>
           <div class="price">€4.99 <small>/ month</small></div>
-          <div class="alt">or €39.99 / year — two months free</div>
+          <div class="alt">or €39.99 / year (two months free)</div>
           <ul>
             <li>Unlimited planning, as far ahead as you like</li>
             <li>Full 480+ recipe catalog</li>
             <li>New recipes added every month</li>
-            <li>Open Floor rounds — everyone nominates</li>
+            <li>Open Floor rounds, everyone nominates</li>
             <li>Whole household included</li>
           </ul>
         </div>
@@ -202,10 +188,11 @@
   </section>
 
   <section class="cta">
-    <h2>Launching soon on both stores</h2>
-    <p>Yumvote is in final review with Apple and Google. Want a nudge the moment it’s live?</p>
+    <h2>Dinner tonight? Sorted.</h2>
+    <p>Download Yumvote free. Your whole household joins with one invite code.</p>
     <div class="badges">
-      <a class="badge" href="mailto:support@yumvote.app?subject=Tell%20me%20when%20Yumvote%20launches&body=Let%20me%20know%20when%20Yumvote%20is%20live!">📬 <span class="txt"><small>Get notified</small>support@yumvote.app</span></a>
+      <a href="https://apps.apple.com/app/id6783482200"><img class="storebadge" src="/badge-appstore.png" alt="Download on the App Store" /></a>
+      <a href="https://play.google.com/store/apps/details?id=io.yumvote.app"><img class="storebadge" src="/badge-play.png" alt="Get it on Google Play" /></a>
     </div>
   </section>
 
@@ -216,7 +203,7 @@
       <a href="/terms.html">Terms of Use</a> ·
       <a href="/delete-account.html">Delete account</a>
     </nav>
-    <div class="copy">© 2026 Blinklabs Ltd · Yumvote is made with 🍅 in Malta</div>
+    <div class="copy">© 2026 Blinklabs Ltd · Developed by <a href="https://blinklabs.eu">Blinklabs MT</a> · Made with 🍅 in Malta</div>
   </footer>
 
 </body>
