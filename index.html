@@ -9,6 +9,8 @@
   <meta property="og:description" content="Plan the week, vote on dinner, and shop together. 480+ recipes included." />
   <meta property="og:image" content="https://yumvote.app/dishes/d1.jpg" />
   <meta property="og:url" content="https://yumvote.app" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
@@ -161,13 +163,15 @@
       footer nav a { display: inline-block; margin: 4px 8px; }
     }
   </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Yumvote: Family Meal Planner","operatingSystem":"iOS, Android","applicationCategory":"LifestyleApplication","description":"The family meal planner where everyone gets a vote. Plan the week, vote on dinner, and get a shopping list that writes itself. 480+ recipes included.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://yumvote.app","publisher":{"@type":"Organization","name":"Blinklabs Ltd","url":"https://blinklabs.eu"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Yumvote","url":"https://yumvote.app","logo":"https://yumvote.app/logo.png","email":"support@yumvote.app","parentOrganization":{"@type":"Organization","name":"Blinklabs Ltd","url":"https://blinklabs.eu"}}</script>
 </head>
 <body>
 
   <nav class="topnav">
     <div class="wrap nav-inner">
       <img src="/logo.png" alt="Yumvote" />
-      <a class="nav-btn" href="#download">Download</a>
+      <span><a class="nav-link" href="/recipes/" style="color:var(--crimson);font-weight:700;text-decoration:none;font-size:14px;margin-right:18px">Recipes</a><a class="nav-btn" href="#download">Download</a></span>
     </div>
   </nav>
 
@@ -304,6 +308,7 @@
 
   <footer>
     <nav>
+      <a href="/recipes/">Recipes</a> ·
       <a href="mailto:support@yumvote.app">Support</a> ·
       <a href="/privacy.html">Privacy Policy</a> ·
       <a href="/terms.html">Terms of Use</a> ·
