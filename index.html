@@ -40,7 +40,6 @@
       box-shadow: 0 10px 26px rgba(220,38,38,.35);
     }
     .cta-btn:hover { filter: brightness(1.05); }
-    .cta-micro { display: block; margin-top: 12px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #B9AFA9; }
 
     /* Handwritten annotations */
     .hand { font-family: Caveat, cursive; font-size: 24px; font-weight: 600; color: var(--ink); line-height: 1.15; }
@@ -70,7 +69,10 @@
     .hero-join { margin-top: 16px; color: var(--ink2); font-size: 17px; }
 
     /* Wave (blush) sections — organic curves top & bottom */
-    .wave { background: var(--blush); }
+    .wave { background: var(--crimson); }
+    .wave h2, .wave .kicker, .wave .hand { color: #fff; }
+    .wave .cta-btn { background: #fff; color: var(--crimson); box-shadow: 0 10px 26px rgba(0,0,0,.22); }
+    .wave .annotate svg path { stroke: #fff; }
     .wave-top, .wave-bottom { display: block; width: 100%; height: 90px; }
     .wave-top { margin-bottom: -1px; }
     .wave-bottom { margin-top: -1px; }
@@ -85,7 +87,7 @@
     .profiles { display: flex; gap: 0; justify-content: center; }
     .profile { padding: 0 44px; }
     .profile + .profile { border-left: 1px solid #E5DCD6; }
-    .profile .avatar { width: 92px; height: 92px; border-radius: 50%; background: var(--blush); object-fit: contain; padding: 8px; }
+    .profile .avatar { width: 92px; height: 92px; border-radius: 50%; background: #FBF7F1; object-fit: contain; padding: 8px; }
     .profile-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
     .profile-head span { font-weight: 800; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
     .pf { margin-bottom: 14px; }
@@ -96,7 +98,8 @@
     .center-cta .cta-btn { margin-top: 0; }
 
     /* Annotations next to phones */
-    .annotate { position: absolute; max-width: 190px; }
+    .annotate { position: absolute; max-width: 190px; color: var(--ink); }
+    .wave .annotate { color: #fff; }
     .annotate svg { display: block; margin-top: 6px; }
     .anno-shop { right: -4%; top: 6%; text-align: left; }
     .anno-cook { right: -2%; top: 16%; }
@@ -122,21 +125,36 @@
     footer .copy2 { margin-top: 10px; color: rgba(255,255,255,.6); }
 
     @media (max-width: 860px) {
-      .split { flex-direction: column; padding: 56px 0; gap: 30px; text-align: center; }
-      .split.rev { flex-direction: column; }
-      .kicker, .body { margin-inline: auto; }
-      .hero .visual { min-height: 480px; }
-      .hero-blob { width: 480px; height: 440px; }
-      .hero-phone { width: 240px; }
+      .wrap { padding: 0 20px; }
+      .split { flex-direction: column; padding: 44px 0; gap: 26px; text-align: center; }
+      .split > .copy, .split > .visual { width: 100%; }
+      h1 { font-size: clamp(34px, 9.5vw, 44px); }
+      h2 { font-size: clamp(26px, 7.5vw, 34px); }
+      .kicker { font-size: 13px; margin: 18px auto 6px; max-width: 34ch; }
+      .body { margin-inline: auto; font-size: 15px; }
+      .cta-btn { padding: 14px 26px; font-size: 14px; margin-top: 20px; }
+      .hero .visual { min-height: 430px; align-items: center; }
+      .hero-blob { width: 400px; height: 370px; }
+      .hero-phone { width: 210px; }
       .float-dish { display: none; }
-      .steps-row { gap: 10px; }
-      .step-col img { width: 30vw; max-width: 150px; }
-      .profiles { flex-wrap: wrap; gap: 26px; }
-      .profile { padding: 0 18px; }
-      .profile + .profile { border-left: none; }
-      .single-phone { width: 240px; }
-      .fan2 { width: 92vw; max-width: 420px; }
-      .annotate { position: static; max-width: none; margin-top: 14px; }
+      .badges { justify-content: center; gap: 10px; }
+      .storebadge { height: 46px; }
+      .hero-join { font-size: 15px; }
+      .wave-top, .wave-bottom { height: 44px; }
+      .steps-row { gap: 8px; justify-content: center; }
+      .step-col img { width: 28vw; max-width: 130px; }
+      .step-col .hand { font-size: 19px; margin-top: 6px; }
+      .profiles { gap: 8px; }
+      .profile { padding: 0 12px; }
+      .profile + .profile { border-left: 1px solid #E5DCD6; }
+      .profile .avatar { width: 64px; height: 64px; }
+      .profile-head { gap: 10px; margin-bottom: 12px; flex-direction: column; align-items: center; text-align: center; }
+      .pf { margin-bottom: 10px; text-align: center; }
+      .pf .v { font-size: 14px; }
+      .center-cta { padding-bottom: 48px; }
+      .single-phone { width: 210px; }
+      .fan2 { width: 88vw; max-width: 380px; }
+      .annotate { position: static; max-width: none; margin-top: 12px; }
       .annotate svg { display: none; }
       footer nav a { display: inline-block; margin: 4px 8px; }
     }
@@ -164,7 +182,7 @@
       </div>
       <div class="visual">
         <svg class="hero-blob" viewBox="0 0 620 560" fill="none" aria-hidden="true">
-          <path fill="#FDEFEB" d="M310 18c118-24 244 40 282 148 36 102-16 214-96 280-86 71-214 96-316 48C74 444 6 336 26 232 46 130 178 45 310 18Z"/>
+          <path fill="#DC2626" d="M310 18c118-24 244 40 282 148 36 102-16 214-96 280-86 71-214 96-316 48C74 444 6 336 26 232 46 130 178 45 310 18Z"/>
         </svg>
         <img class="hero-phone" src="/phone-vote.png?v=3" alt="Voting on tonight's dinner in Yumvote" />
         <img class="float-dish fd1" src="/dishes/d6.jpg?v=3" alt="" loading="lazy" />
@@ -175,14 +193,13 @@
   </section>
 
   <!-- ============ HOW IT WORKS (wave) ============ -->
-  <svg class="wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,58 C220,96 470,8 740,34 C1010,60 1230,14 1440,44 L1440,90 L0,90 Z" fill="#FDEFEB"/></svg>
+  <svg class="wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,58 C220,96 470,8 740,34 C1010,60 1230,14 1440,44 L1440,90 L0,90 Z" fill="#DC2626"/></svg>
   <section class="wave">
     <div class="wrap split">
       <div class="copy">
         <h2>Your busy weeknights are about to be so much easier.</h2>
         <p class="kicker">We've made planning, voting, and grocery shopping as simple as asking "what's for dinner?"</p>
         <a class="cta-btn" href="#download">Start deciding together</a>
-        <span class="cta-micro">Download the app</span>
       </div>
       <div class="visual">
         <div class="steps-row">
@@ -193,7 +210,7 @@
       </div>
     </div>
   </section>
-  <svg class="wave-bottom" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,32 C230,4 480,84 750,58 C1020,32 1240,78 1440,42 L1440,0 L0,0 Z" fill="#FDEFEB"/></svg>
+  <svg class="wave-bottom" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,32 C230,4 480,84 750,58 C1020,32 1240,78 1440,42 L1440,0 L0,0 Z" fill="#DC2626"/></svg>
 
   <!-- ============ PERSONALIZED ============ -->
   <section>
@@ -224,30 +241,28 @@
     </div>
     <div class="center-cta">
       <a class="cta-btn" href="#download">Recipes for your table</a>
-      <span class="cta-micro">Download the app</span>
     </div>
   </section>
 
   <!-- ============ SHOPPING (wave) ============ -->
-  <svg class="wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,50 C260,92 520,10 780,38 C1040,66 1260,18 1440,50 L1440,90 L0,90 Z" fill="#FDEFEB"/></svg>
+  <svg class="wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,50 C260,92 520,10 780,38 C1040,66 1260,18 1440,50 L1440,90 L0,90 Z" fill="#DC2626"/></svg>
   <section class="wave">
     <div class="wrap split">
       <div class="copy">
         <h2>Grocery shopping <em>Simplified.</em></h2>
         <p class="kicker">Shop once per week with an organized, done for you shopping list.</p>
         <a class="cta-btn" href="#download">Start shopping smarter</a>
-        <span class="cta-micro">Download the app</span>
       </div>
       <div class="visual">
         <img class="single-phone" src="/phone-shop.png?v=3" alt="Aisle-sorted shopping list" />
         <div class="annotate anno-shop">
           <span class="hand">All your ingredients auto-sorted by aisle</span>
-          <svg width="70" height="46" viewBox="0 0 70 46" fill="none"><path d="M64 4 C40 10, 18 18, 6 42" stroke="#1F1A17" stroke-width="2.4" stroke-linecap="round"/><path d="M4 30 L6 43 L18 39" stroke="#1F1A17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <svg width="70" height="46" viewBox="0 0 70 46" fill="none"><path d="M64 4 C40 10, 18 18, 6 42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 30 L6 43 L18 39" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
         </div>
       </div>
     </div>
   </section>
-  <svg class="wave-bottom" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,8 500,86 760,54 C1020,22 1250,72 1440,36 L1440,0 L0,0 Z" fill="#FDEFEB"/></svg>
+  <svg class="wave-bottom" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,8 500,86 760,54 C1020,22 1250,72 1440,36 L1440,0 L0,0 Z" fill="#DC2626"/></svg>
 
   <!-- ============ COOKING ============ -->
   <section>
@@ -256,20 +271,19 @@
         <h2>Cooking <em>Stress-free.</em></h2>
         <p class="kicker">Step by step cook mode, kid friendly tweaks, and dinner in about 30 minutes.</p>
         <a class="cta-btn" href="#download">Get stress-free cooking</a>
-        <span class="cta-micro">Download the app</span>
       </div>
       <div class="visual">
         <img class="single-phone" src="/phone-cook.png?v=3" alt="Step-by-step cooking mode" />
         <div class="annotate anno-cook">
           <span class="hand">One step at a time, kitchen-sized text</span>
-          <svg width="70" height="46" viewBox="0 0 70 46" fill="none"><path d="M64 4 C40 10, 18 18, 6 42" stroke="#1F1A17" stroke-width="2.4" stroke-linecap="round"/><path d="M4 30 L6 43 L18 39" stroke="#1F1A17" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <svg width="70" height="46" viewBox="0 0 70 46" fill="none"><path d="M64 4 C40 10, 18 18, 6 42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 30 L6 43 L18 39" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FINAL CTA (wave) ============ -->
-  <svg class="wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,54 C240,94 500,12 770,40 C1040,68 1250,16 1440,48 L1440,90 L0,90 Z" fill="#FDEFEB"/></svg>
+  <svg class="wave-top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,54 C240,94 500,12 770,40 C1040,68 1250,16 1440,48 L1440,90 L0,90 Z" fill="#DC2626"/></svg>
   <section class="wave" id="download">
     <div class="wrap split">
       <div class="copy">
