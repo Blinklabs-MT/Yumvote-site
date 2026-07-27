@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/recipes/style.css" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","name":"Cuban Sandwich","image":["https://ovijttwqavpcjqeiijmh.supabase.co/storage/v1/object/public/official-dish-photos/cuban-sandwich.jpg"],"description":"Roast pork, sliced ham, Swiss cheese, pickles and yellow mustard pressed between buttered Cuban bread until shatteringly crispy and the cheese is molten. Florida-Cuban diner classic, panini-press perfect.","recipeCuisine":"Cuban","prepTime":"PT20M","totalTime":"PT20M","recipeYield":"1 serving","keywords":"quick, weeknight, kid ready, comfort, high protein","nutrition":{"@type":"NutritionInformation","calories":"568 calories","servingSize":"1 serving"},"suitableForDiet":[],"recipeIngredient":["2 small Cuban bread","to taste Hot sauce","150 g Slow-roast pork","40 g Butter","150 g Swiss cheese","120 g Cooked ham","10 slices Gherkins","2 tbsp Yellow mustard"],"isAccessibleForFree":"True","author":{"@type":"Organization","name":"Yumvote"},"publisher":{"@type":"Organization","name":"Yumvote","url":"https://yumvote.app"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","name":"Cuban Sandwich","image":["https://ovijttwqavpcjqeiijmh.supabase.co/storage/v1/object/public/official-dish-photos/cuban-sandwich.jpg"],"description":"Roast pork, sliced ham, Swiss cheese, pickles and yellow mustard pressed between buttered Cuban bread until shatteringly crispy and the cheese is molten. Florida-Cuban diner classic, panini-press perfect.","recipeCuisine":"Cuban","prepTime":"PT20M","totalTime":"PT20M","recipeYield":"1 serving","keywords":"quick, weeknight, kid ready, comfort, high protein","nutrition":{"@type":"NutritionInformation","calories":"568 calories","servingSize":"1 serving","proteinContent":"38 g","carbohydrateContent":"56 g","fatContent":"21 g"},"suitableForDiet":[],"recipeIngredient":["2 small Cuban bread","to taste Hot sauce","150 g Slow-roast pork","40 g Butter","150 g Swiss cheese","120 g Cooked ham","10 slices Gherkins","2 tbsp Yellow mustard"],"recipeInstructions":[{"@type":"HowToStep","position":1,"text":"Cut the Cuban-style bread (or ciabatta/baguette) lengthways but don't slice all the way through. Open like a book."},{"@type":"HowToStep","position":2,"text":"Smear yellow mustard generously on both cut surfaces."},{"@type":"HowToStep","position":3,"text":"Layer the bottom half: slices of cooked ham (overlapping), sliced roast pork (overlapping), Swiss cheese (covering everything edge-to-edge), thinly sliced pickles, more Swiss cheese on top."},{"@type":"HowToStep","position":4,"text":"Close the sandwich. Press down firmly with your palm."},{"@type":"HowToStep","position":5,"text":"Spread softened butter generously on the OUTSIDE of both top and bottom of the bread."},{"@type":"HowToStep","position":6,"text":"Heat a wide heavy pan over medium-low heat (no oil). Lay the sandwich in. Place a heavy pan (or foil-wrapped brick) on top to press."},{"@type":"HowToStep","position":7,"text":"Cook 4-5 min until the bread is deep gold and crisp. Flip carefully (use 2 spatulas). Press again. Cook 3-4 more min — the cheese should be fully melted and the bread shatteringly crisp."},{"@type":"HowToStep","position":8,"text":"Lift onto a board. Rest 1 minute. Slice diagonally with a serrated knife. Plate with kettle chips, sliced pickles, hot sauce on the side. Cold beer alongside."}],"isAccessibleForFree":"True","author":{"@type":"Organization","name":"Yumvote"},"publisher":{"@type":"Organization","name":"Yumvote","url":"https://yumvote.app"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Yumvote","item":"https://yumvote.app/"},{"@type":"ListItem","position":2,"name":"Recipes","item":"https://yumvote.app/recipes/"},{"@type":"ListItem","position":3,"name":"Cuban Sandwich","item":"https://yumvote.app/recipes/cuban-sandwich.html"}]}</script>
 </head>
 <body>
@@ -47,8 +47,23 @@
 <div class="chips"><span class="chip warn">Contains gluten</span><span class="chip warn">Contains dairy</span></div>
 </div>
 </div>
-<h2 class="sect">Ingredients <span style="font-weight:500;font-size:14px;color:#6B6B72">· per serving</span></h2>
-<ul class="ing"><li><b>2 small</b> Cuban bread</li>
+<div class="tabs" role="tablist">
+<button class="tab on" data-t="overview">Overview</button>
+<button class="tab" data-t="ingredients">Ingredients</button>
+<button class="tab" data-t="instructions">Instructions</button>
+</div>
+<section class="tabpane on" id="t-overview">
+<h2 class="sect">Nutrition</h2>
+<div class="nut">
+<div class="ncell"><div class="nv">568<small> kcal</small></div><div class="nk">Calories</div></div>
+<div class="ncell"><div class="nv">38<small> g</small></div><div class="nk">Protein</div></div>
+<div class="ncell"><div class="nv">56<small> g</small></div><div class="nk">Carbs</div></div>
+<div class="ncell"><div class="nv">21<small> g</small></div><div class="nk">Fat</div></div>
+</div><div class="nnote">Estimated, per serving</div>
+<h2 class="sect">Good to know</h2><div class="chips"><span class="chip warn">Contains gluten</span><span class="chip warn">Contains dairy</span></div>
+</section>
+<section class="tabpane" id="t-ingredients">
+<h2 class="sect">Ingredients <span style="font-weight:500;font-size:14px;color:#6B6B72">· per serving</span></h2><ul class="ing"><li><b>2 small</b> Cuban bread</li>
 <li><b> to taste</b> Hot sauce</li>
 <li><b>150 g</b> Slow-roast pork</li>
 <li><b>40 g</b> Butter</li>
@@ -56,11 +71,28 @@
 <li><b>120 g</b> Cooked ham</li>
 <li><b>10 slices</b> Gherkins</li>
 <li><b>2 tbsp</b> Yellow mustard</li></ul>
-<h2 class="sect">Cook it, step by step</h2>
+</section>
+<section class="tabpane" id="t-instructions">
+<h2 class="sect">Instructions</h2><ol class="steps"><li>Cut the Cuban-style bread (or ciabatta/baguette) lengthways but don't slice all the way through. Open like a book.</li>
+<li>Smear yellow mustard generously on both cut surfaces.</li>
+<li>Layer the bottom half: slices of cooked ham (overlapping), sliced roast pork (overlapping), Swiss cheese (covering everything edge-to-edge), thinly sliced pickles, more Swiss cheese on top.</li>
+<li>Close the sandwich. Press down firmly with your palm.</li>
+<li>Spread softened butter generously on the OUTSIDE of both top and bottom of the bread.</li>
+<li>Heat a wide heavy pan over medium-low heat (no oil). Lay the sandwich in. Place a heavy pan (or foil-wrapped brick) on top to press.</li>
+<li>Cook 4-5 min until the bread is deep gold and crisp. Flip carefully (use 2 spatulas). Press again. Cook 3-4 more min — the cheese should be fully melted and the bread shatteringly crisp.</li>
+<li>Lift onto a board. Rest 1 minute. Slice diagonally with a serrated knife. Plate with kettle chips, sliced pickles, hot sauce on the side. Cold beer alongside.</li></ol>
 <div class="appbox"><h3>Cook mode lives in the app</h3>
 <p>Kitchen-sized steps, kid-friendly tweaks, and your household's votes on what to cook next. Free to download.</p>
 <div class="b"><a href="https://apps.apple.com/app/id6783482200"><img src="/badge-appstore.png?v=4" alt="Download on the App Store"></a>
 <a href="https://play.google.com/store/apps/details?id=io.yumvote.app"><img src="/badge-play.png?v=4" alt="Get it on Google Play"></a></div></div>
+</section>
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+tabs.forEach(b=>b.addEventListener('click',()=>{
+tabs.forEach(x=>x.classList.toggle('on',x===b));
+document.querySelectorAll('.tabpane').forEach(p=>p.classList.toggle('on',p.id==='t-'+b.dataset.t));
+}));
+</script>
 </main>
 <footer><nav>
 <a href="/">Home</a> · <a href="/recipes/">Recipes</a> · <a href="mailto:support@yumvote.app">Support</a> ·
