@@ -4,7 +4,7 @@
 > household votes on dinner. Plan the week, vote on meals, and get a shopping
 > list that writes itself. 480+ recipes with nutrition estimates and allergen
 > labels. Free to download; Yumvote Pro adds unlimited planning and the full
-> catalog with a 14-day free trial. One subscription covers the whole household.
+> catalog with a 7-day free trial. One subscription covers the whole household.
 
 ## Key pages
 - [Home](https://yumvote.app/): what Yumvote is, pricing, download links
@@ -15,7 +15,7 @@
 
 ## Facts
 - Platforms: iOS (App Store) and Android (Google Play)
-- Price: free; Yumvote Pro €4.99/month or €39.99/year, 14-day free trial
+- Price: free; Yumvote Pro €4.99/month or €39.99/year, 7-day free trial
 - One subscription covers the entire household
 - Developer: Blinklabs Ltd (Malta), https://blinklabs.eu
 - Support: support@yumvote.app
