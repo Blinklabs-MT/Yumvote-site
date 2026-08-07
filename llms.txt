@@ -3,7 +3,7 @@
 > Yumvote is a family meal-planning app for iOS and Android where the whole
 > household votes on dinner. Plan the week, vote on meals, and get a shopping
 > list that writes itself. 480+ recipes with nutrition estimates and allergen
-> labels. Free to download; Yumvote Pro adds unlimited planning and the full
+> labels. Yumvote Pro unlocks unlimited planning and the full
 > catalog with a 7-day free trial. One subscription covers the whole household.
 
 ## Key pages
@@ -15,7 +15,7 @@
 
 ## Facts
 - Platforms: iOS (App Store) and Android (Google Play)
-- Price: free; Yumvote Pro €4.99/month or €39.99/year, 7-day free trial
+- Price: Yumvote Pro €4.99/month or €39.99/year, free for the first 7 days
 - One subscription covers the entire household
 - Developer: Blinklabs Ltd (Malta), https://blinklabs.eu
 - Support: support@yumvote.app
